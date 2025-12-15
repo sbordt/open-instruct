@@ -411,9 +411,6 @@ def main(args: FlatArguments, tc: TokenizerConfig):
         if args.hf_repo_revision is None:
             args.hf_repo_revision = args.exp_name
         args.hf_repo_url = f"https://huggingface.co/{args.hf_repo_id}/tree/{args.hf_repo_revision}"
-        if args.save_to_hub is not None:
-            args.hf_repo_url = args.save_to_hub
-            args.hf_repo_revision = None
         if is_beaker_job():
             beaker_config = maybe_get_beaker_config()
 
